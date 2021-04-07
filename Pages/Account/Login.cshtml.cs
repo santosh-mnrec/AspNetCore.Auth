@@ -28,7 +28,6 @@ public class LoginModel : PageModel
             new Claim("FullName", UserDTO.Password),
             new Claim(ClaimTypes.Role, "Administrator"),
         };
-
         var claimsIdentity = new ClaimsIdentity(
             claims, CookieAuthenticationDefaults.AuthenticationScheme);
         await HttpContext.SignInAsync(
@@ -36,4 +35,5 @@ public class LoginModel : PageModel
             new ClaimsPrincipal(claimsIdentity));
 
     }
+    
 }
